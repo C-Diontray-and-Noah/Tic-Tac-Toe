@@ -1,0 +1,6 @@
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\obj\Debug\Game3T.csproj.CoreCompileInputs.cache
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\bin\Debug\Game3T.exe.config
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\bin\Debug\Game3T.exe
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\bin\Debug\Game3T.pdb
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\obj\Debug\Game3T.exe
+C:\Users\ng146468\Desktop\FINALPROJECT\Tic-Tac-Toe\Game\Game3T\obj\Debug\Game3T.pdb
