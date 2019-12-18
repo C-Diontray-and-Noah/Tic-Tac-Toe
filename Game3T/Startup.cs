@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StartupDisplay
+namespace Game3T
 {
-    class Program
+    class Startup
     {
         static void Main(string[] args)
         {
@@ -14,15 +14,15 @@ namespace StartupDisplay
             bool quit = false;
             Console.WriteLine("Welcome to Tic Tac Toe! Would you like to play Tic Tac Toe?");
             userInput = Console.ReadLine();
-            while(quit == false)
-            if (userInput.ToLower() == "yes")
-            {
+            while (quit == false)
+                if (userInput.ToLower() == "yes")
+                {
 
-            }
-            else if (userInput.ToLower() == "no")
-            {
+                }
+                else if (userInput.ToLower() == "no")
+                {
                     quit = true;
-            }
+                }
         }
     }
 }
