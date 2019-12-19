@@ -8,5 +8,9 @@ namespace Game3T
 {
     class Multiplayer
     {
+        public static void TTTMultiplayer(string[] placeHolders)
+        {
+
+        }
     }
 }
