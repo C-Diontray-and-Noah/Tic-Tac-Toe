@@ -22,7 +22,6 @@ namespace Game3T
                    
                     Console.WriteLine("Would you like to play singleplayer or multiplayer?");
                     userInput = Console.ReadLine();
-                    Board.TTTBoard(placeHolders);
                     if (userInput.ToLower() == "singleplayer")
                     {
                         Multiplayer.TTTMultiplayer(placeHolders);
