@@ -8,5 +8,9 @@ namespace Game3T
 {
     class AI
     {
+        public static void TTTAI(string[] placeHolders)
+        {
+
+        }
     }
 }
