@@ -8,7 +8,7 @@ namespace Game3T
 {
     class Multiplayer
     {
-        public static void TTTMultiplayer(string[] placeHolders)
+        public static void TTTMultiplayer(string[] placeHolders, int[,,] winOutcomes)
         {
             bool win = false;
             bool xOrO = false;
@@ -60,6 +60,11 @@ namespace Game3T
                         userChoice = Convert.ToInt32(Console.ReadLine());
                         placeHolders[userChoice] =  playerTwo;
                         Board.TTTBoard(placeHolders);
+
+                    for (int i = 0; i > winOutcomes[i, 0, 0]; ++i)
+                    {
+                        //for (int j =)
+                    }
                 }
                 ++turns;
 
