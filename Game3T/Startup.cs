@@ -12,7 +12,7 @@ namespace Game3T
         {
             string userInput = null;
             bool quit = false;
-            string[] placeHolders = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+            string[] placeHolders = {"1", "2", "3", "4", "5", "6", "7", "8", "9" };
             Console.WriteLine("Welcome to Tic Tac Toe! Would you like to play Tic Tac Toe?");
             userInput = Console.ReadLine();
 
@@ -22,14 +22,13 @@ namespace Game3T
                    
                     Console.WriteLine("Would you like to play singleplayer or multiplayer?");
                     userInput = Console.ReadLine();
-                    Board.TTTBoard(placeHolders);
                     if (userInput.ToLower() == "singleplayer")
                     {
-                        Multiplayer.TTTMultiplayer(placeHolders);
+                        AI.TTTAI(placeHolders);
                     }
                     else if (userInput.ToLower() == "multiplayer")
                     {
-                        AI.TTTAI(placeHolders);
+                        Multiplayer.TTTMultiplayer(placeHolders);
                     }
                     quit = true;
                 }
