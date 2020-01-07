@@ -11,8 +11,8 @@ namespace Game3T
         public static void TTTBoard(string []placeHolders)
         {
             
-             
-
+              
+        
             for (int i = 1; i < placeHolders.Length; i++)
             {
                 if (i == 3 || i == 6 || i == 10)
