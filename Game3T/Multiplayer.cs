@@ -19,6 +19,7 @@ namespace Game3T
             
             do
             {
+                
                     while (xOrO == false)
                     {
                         Console.WriteLine("Player 1 : X or O?");
@@ -41,9 +42,10 @@ namespace Game3T
                         else
                             Console.WriteLine("Not an option");
                     }
-               
+
                 if (turns % 2 == 0)
                 {
+                    Console.WriteLine("Player 1's turn : ");
                     //for (int i = 0; i < placeHolders.Length; ++i)
                     userChoice = Convert.ToInt32(Console.ReadLine());
                     placeHolders[userChoice] = playerOne;
@@ -57,17 +59,41 @@ namespace Game3T
                 {
                     Console.WriteLine("Player 2's turn : ");
                     // (int i = 0; i < placeHolders.Length; ++i)
-                        userChoice = Convert.ToInt32(Console.ReadLine());
-                        placeHolders[userChoice] =  playerTwo;
-                        Board.TTTBoard(placeHolders);
-
-                    for (int i = 0; i > winOutcomes[i, 0, 0]; ++i)
+                    userChoice = Convert.ToInt32(Console.ReadLine());
+                    while (turns % 2 != 0)
+                    
+                    if (placeHolders[userChoice] == playerOne)
                     {
-                        //for (int j =)
+                        Console.WriteLine("Already taken. Choose another.");
+                    }
+                    else
+                    {
+                            placeHolders[userChoice] = playerTwo;
+                            ++turns;
+                    }
+                    Board.TTTBoard(placeHolders);
+                }
+                    /*for (int i = 0; i < 3; i++)
+                    {
+                    if (placeHolders[winOutcomes[i, 0, 0]] == "X")
+                    { 
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if (placeHolders[winOutcomes[0, j, 0]] == "X")
+                            {
+                                for (int k = 0; k < 1; k++)
+                            {
+                                    if (placeHolders[winOutcomes[0, 0, k]] == "X")
+                                    {
+                                        win = true;
+                                    }
+
+                                }
+                            }
+                        }
                     }
                 }
-                ++turns;
-
+                */
             } while (win == false);
         }
     }

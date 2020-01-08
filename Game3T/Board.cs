@@ -8,7 +8,7 @@ namespace Game3T
 {
     class Board
     {
-        public static void TTTBoard(string []placeHolders)
+        public static void TTTBoard(string[] placeHolders)
         {
             
               
