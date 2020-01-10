@@ -8,11 +8,11 @@ namespace Game3T
 {
     class Board
     {
-        public static void TTTBoard(string []placeHolders)
+        public static void TTTBoard(string[] placeHolders)
         {
-            
-              
-        
+           
+
+
             for (int i = 1; i < placeHolders.Length; i++)
             {
                 if (i == 3 || i == 6 || i == 10)
