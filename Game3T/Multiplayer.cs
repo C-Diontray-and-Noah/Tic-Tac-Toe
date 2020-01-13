@@ -43,7 +43,7 @@ namespace Game3T
                     else
                         Console.WriteLine("Not an option");
                 }
-
+                //Starts player 1's turn
                 if (turns % 2 == 0)
                 {
                     Console.WriteLine("Player 1's turn : ");
@@ -51,11 +51,13 @@ namespace Game3T
 
                     while (turns % 2 == 0)
                     {
+                        //Evaluates whether the space chosen by player one is already taken
                         if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
                         {
                             Console.WriteLine("Already taken. Choose another.");
                             userChoice = Convert.ToInt32(Console.ReadLine());
                         }
+                        //Evaluates whether the space chosen by
                         else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
                             placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
                             || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
@@ -71,16 +73,24 @@ namespace Game3T
                     }
                     Board.TTTBoard(placeHolders);
                 }
+                //Starts player 2's turn
                 else
                 {
                     Console.WriteLine("Player 2's turn : ");
-                    userChoice = Convert.ToInt32(Console.ReadLine());
+                    
                     while (turns % 2 != 0)
                     {
+                        userChoice = Convert.ToInt32(Console.ReadLine());
                         if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
                         {
                             Console.WriteLine("Already taken. Choose another.");
-                            userChoice = Convert.ToInt32(Console.ReadLine());
+                        }
+                        else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
+                           placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
+                           || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
+                        {
+                            placeHolders[userChoice] = playerTwo;
+                            ++turns;
                         }
                         else
                         {
@@ -91,6 +101,7 @@ namespace Game3T
                     Board.TTTBoard(placeHolders);
                 }
 
+                //Win outcomes for player one
                 if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerOne)
                 {
                     win = true;
@@ -132,19 +143,68 @@ namespace Game3T
                     winner = "Player 1";
                 }
 
+<<<<<<< HEAD
+                //Win outcomes for player two
+=======
+>>>>>>> 616b5a0917902fb21d7b8189cb8dc5dd1f810822
+                if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                else if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
 
             } while (win == false);
+            //Resets all values on the board to the original ones
             Console.WriteLine("{0} wins!", winner);
 
-            placeHolders[1] = "1";
-            placeHolders[2] = "2";
-            placeHolders[3] = "3";
-            placeHolders[4] = "4";
-            placeHolders[5] = "5";
-            placeHolders[6] = "6";
-            placeHolders[7] = "7";
-            placeHolders[8] = "8";
-            placeHolders[9] = "9";
+<<<<<<< HEAD
+            for (int i = 0; i < placeHolders.Length; ++i)
+            {
+                placeHolders[i] = Convert.ToString(i);
+            }
+=======
+
+            for (int i = 0; i < placeHolders.Length; i++)
+            {
+                placeHolders[i] = Convert.ToString(i); 
+            }
+         
+>>>>>>> 616b5a0917902fb21d7b8189cb8dc5dd1f810822
         }
     }
 }
