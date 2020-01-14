@@ -46,7 +46,7 @@ namespace Game3T
                     {
                         Console.WriteLine("Not an option");
                     }
-
+                }
                     if (turns % 2 == 0)
                     {
                         Console.WriteLine("Player 1's turn : ");
@@ -186,12 +186,12 @@ namespace Game3T
                                 placeHolders[1] = playerAI;
                                 acceptableResponse = true;
                             }
-                            else if (randomNumber == 2 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                            else if (randomNumber == 2 && placeHolders[2] != playerOne || placeHolders[2] != playerAI)
                             {
                                 placeHolders[2] = playerAI;
                                 acceptableResponse = true;
                             }
-                            else if (randomNumber == 3 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
+                            else if (randomNumber == 3 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
                             {
                                 placeHolders[3] = playerAI;
                                 acceptableResponse = true;
@@ -201,14 +201,28 @@ namespace Game3T
                                 placeHolders[4] = playerAI;
                                 acceptableResponse = true;
                             }
-                            else if (randomNumber == 4 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                            else if (randomNumber == 5 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                            {
+                                placeHolders[6] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 6 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                            {
+                                placeHolders[7] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 7 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                            {
+                                placeHolders[8] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 8 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
                             {
                                 placeHolders[9] = playerAI;
                                 acceptableResponse = true;
                             }
                         }
-                }
-                Board.TTTBoard(placeHolders);
+                        Board.TTTBoard(placeHolders);
 
 
                 //Win outcomes for player one
