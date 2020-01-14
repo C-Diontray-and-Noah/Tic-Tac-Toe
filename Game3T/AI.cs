@@ -106,21 +106,32 @@ namespace Game3T
                 {
                     while (acceptableResponse == false)
                     {
-                        randomNumber = random.Next(1, 4);
-                        if (randomNumber == 1 && placeHolders[4] != playerOne || placeHolders[4] != playerAI)
+                        randomNumber = random.Next(1, 3);
+                        if (placeHolders[1] == playerOne)
                         {
-                            placeHolders[4] = playerAI;
-                            acceptableResponse = true;
+                            if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
+                            {
+                                placeHolders[1] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 2 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
+                            {
+                                placeHolders[3] = playerAI;
+                                acceptableResponse = true;
+                            }
                         }
-                        else if (randomNumber == 2 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
+                        else if (placeHolders[5] == playerOne || placeHolders[8] == playerOne)
                         {
-                            placeHolders[6] = playerAI;
-                            acceptableResponse = true;
-                        }
-                        else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
-                        {
-                            placeHolders[8] = playerAI;
-                            acceptableResponse = true;
+                            if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                            {
+                                placeHolders[5] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                            {
+                                placeHolders[8] = playerAI;
+                                acceptableResponse = true;
+                            }
                         }
                     }
                 }
@@ -128,26 +139,32 @@ namespace Game3T
                 {
                     while (acceptableResponse == false)
                     {
-                        randomNumber = random.Next(1, 4);
-                        if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                        randomNumber = random.Next(1, 3);
+                        if (placeHolders[4] == playerOne)
                         {
-                            placeHolders[5] = playerAI;
-                            acceptableResponse = true;
+                            if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                            {
+                                placeHolders[5] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                            {
+                                placeHolders[7] = playerAI;
+                                acceptableResponse = true;
+                            }
                         }
-                        else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        else if (placeHolders[7] == playerOne)
                         {
-                            placeHolders[7] = playerAI;
-                            acceptableResponse = true;
-                        }
-                        else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
-                        {
-                            placeHolders[8] = playerAI;
-                            acceptableResponse = true;
-                        }
-                        else if (randomNumber == 4 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
-                        {
-                            placeHolders[9] = playerAI;
-                            acceptableResponse = true;
+                        else if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                            {
+                                placeHolders[5] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 4 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
+                            {
+                                placeHolders[9] = playerAI;
+                                acceptableResponse = true;
+                            }
                         }
                     }
                 }
@@ -155,7 +172,7 @@ namespace Game3T
                 {
                     while (acceptableResponse == false)
                     {
-                        randomNumber = random.Next(1, 4);
+                        randomNumber = random.Next(1, 3);
                         if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
                         {
                             placeHolders[1] = playerAI;
@@ -179,6 +196,7 @@ namespace Game3T
                     }
                 }
                 else if (placeHolders[5] == playerOne)
+                {
                     while (acceptableResponse == false)
                     {
                         randomNumber = random.Next(1, 8);
@@ -223,6 +241,7 @@ namespace Game3T
                             acceptableResponse = true;
                         }
                     }
+                }
                 Board.TTTBoard(placeHolders);
 
 
