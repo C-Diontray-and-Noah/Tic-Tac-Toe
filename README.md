@@ -1,8 +1,8 @@
 # Tic-Tac-Toe
 <hr>
-<hr3> tic tac toe <hr3>
-First step would be the computer would ask you if you would like to play
-Second it would ask singleplayer or multiplayer 
+tic tac toe
+<hr3> First step would be the computer would ask you if you would like to play
+Second it would ask singleplayer or multiplayer <hr3>
 Now if you chocie SinglePlayer 
 The computer would ask you if you wanna be X or O
 then you'll choice which one you wanna be 
