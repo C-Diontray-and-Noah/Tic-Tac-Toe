@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
 <hr>
-<hr3> this game is called tic tac toe <hr3> 
+<hr3>How To PLay The Game<hr3> 
