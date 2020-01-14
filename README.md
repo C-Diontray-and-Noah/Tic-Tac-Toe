@@ -1,5 +1,6 @@
 # Tic-Tac-Toe
-The tic tac toe!?
+<hr>
+<hr3> tic tac toe <hr3>
 First step would be the computer would ask you if you would like to play
 Second it would ask singleplayer or multiplayer 
 Now if you chocie SinglePlayer 
