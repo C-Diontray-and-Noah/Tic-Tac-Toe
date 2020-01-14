@@ -47,182 +47,184 @@ namespace Game3T
                         Console.WriteLine("Not an option");
                     }
                 }
-                    if (turns % 2 == 0)
-                    {
-                        Console.WriteLine("Player 1's turn : ");
-                        userChoice = Convert.ToInt32(Console.ReadLine());
+                if (turns % 2 == 0)
+                {
+                    Console.WriteLine("Player 1's turn : ");
+                    userChoice = Convert.ToInt32(Console.ReadLine());
 
-                        while (turns % 2 == 0)
-                        {
-                            //Evaluates whether the space chosen by player one is already taken
-                            if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
-                            {
-                                Console.WriteLine("Already taken. Choose another.");
-                                userChoice = Convert.ToInt32(Console.ReadLine());
-                            }
-                            //Evaluates whether the space chosen by
-                            else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
-                                placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
-                                || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
-                            {
-                                placeHolders[userChoice] = playerOne;
-                                ++turns;
-                            }
-                            else
-                            {
-                                Console.WriteLine("That is not an answer. Choose 1 through 9.");
-                                userChoice = Convert.ToInt32(Console.ReadLine());
-                            }
-                        }
-                    }
-                        
-                        Console.WriteLine("Computer's turn : ");
-                        acceptableResponse = false;
-                        System.Threading.Thread.Sleep(1000);
-                    if (placeHolders[1] == playerOne)
+                    while (turns % 2 == 0)
                     {
-                        while (acceptableResponse = true)
+                        //Evaluates whether the space chosen by player one is already taken
+                        if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
                         {
-                            randomNumber = random.Next(1, 3);
-                            if (randomNumber == 1 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
+                            Console.WriteLine("Already taken. Choose another.");
+                            userChoice = Convert.ToInt32(Console.ReadLine());
+                        }
+                        //Evaluates whether the space chosen by the user is a real value available
+                        else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
+                            placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
+                            || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
+                        {
+                            placeHolders[userChoice] = playerOne;
+                            ++turns;
+                        }
+                        else
+                        {
+                            Console.WriteLine("That is not an answer. Choose 1 through 9.");
+                            userChoice = Convert.ToInt32(Console.ReadLine());
                         }
                     }
-                    else if (placeHolders[2] == playerOne)
+                }
+                Board.TTTBoard(placeHolders);
+                //Runs computer's choice by 
+                Console.WriteLine("Computer's turn : ");
+                System.Threading.Thread.Sleep(1000);
+                acceptableResponse = false;
+                if (placeHolders[1] == playerOne)
+                {
+                    while (acceptableResponse == false)
                     {
-                        while (acceptableResponse = true)
+                        randomNumber = random.Next(1, 4);
+                        if (randomNumber == 1 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
                         {
-                            randomNumber = random.Next(1, 3);
-                            if (randomNumber == 1 && placeHolders[4] != playerOne || placeHolders[4] != playerAI)
-                            {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
-                            {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
-                            {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
+                            placeHolders[3] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[7] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 2 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
+                        {
+                            placeHolders[9] = playerAI;
+                            acceptableResponse = true;
                         }
                     }
-                    else if (placeHolders[3] == playerOne)
+                }
+                else if (placeHolders[2] == playerOne)
+                {
+                    while (acceptableResponse == false)
                     {
-                        while (acceptableResponse = true)
+                        randomNumber = random.Next(1, 4);
+                        if (randomNumber == 1 && placeHolders[4] != playerOne || placeHolders[4] != playerAI)
                         {
-                            randomNumber = random.Next(1, 4);
-                            if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
-                            {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
-                            {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 4 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
+                            placeHolders[4] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 2 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
+                        {
+                            placeHolders[6] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                        {
+                            placeHolders[8] = playerAI;
+                            acceptableResponse = true;
                         }
                     }
-                    else if (placeHolders[4] == playerOne)
+                }
+                else if (placeHolders[3] == playerOne)
+                {
+                    while (acceptableResponse == false)
                     {
-                        while (acceptableResponse = false)
+                        randomNumber = random.Next(1, 4);
+                        if (randomNumber == 1 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
                         {
-                            randomNumber = random.Next(1, 4);
-                            if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
-                            {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 3 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
-                            {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 4 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
+                            placeHolders[5] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[7] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 3 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                        {
+                            placeHolders[8] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 4 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
+                        {
+                            placeHolders[9] = playerAI;
+                            acceptableResponse = true;
                         }
                     }
-                    else if (placeHolders[5] == playerOne)
-                        while (acceptableResponse = false)
+                }
+                else if (placeHolders[4] == playerOne)
+                {
+                    while (acceptableResponse == false)
+                    {
+                        randomNumber = random.Next(1, 4);
+                        if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
                         {
-                            randomNumber = random.Next(1, 8);
-                            if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[2] != playerOne || placeHolders[2] != playerAI)
-                            {
-                                placeHolders[2] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 3 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 4 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 5 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 6 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 7 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
-                            {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 8 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
+                            placeHolders[1] = playerAI;
+                            acceptableResponse = true;
                         }
-                        Board.TTTBoard(placeHolders);
+                        else if (randomNumber == 2 && placeHolders[5] != playerOne || placeHolders[5] != playerAI)
+                        {
+                            placeHolders[5] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 3 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
+                        {
+                            placeHolders[6] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 4 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[9] = playerAI;
+                            acceptableResponse = true;
+                        }
+                    }
+                }
+                else if (placeHolders[5] == playerOne)
+                    while (acceptableResponse == false)
+                    {
+                        randomNumber = random.Next(1, 8);
+                        if (randomNumber == 1 && placeHolders[1] != playerOne || placeHolders[1] != playerAI)
+                        {
+                            placeHolders[1] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 2 && placeHolders[2] != playerOne || placeHolders[2] != playerAI)
+                        {
+                            placeHolders[2] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 3 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
+                        {
+                            placeHolders[3] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 4 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[4] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 5 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[6] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 6 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
+                        {
+                            placeHolders[7] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 7 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                        {
+                            placeHolders[8] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (randomNumber == 8 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
+                        {
+                            placeHolders[9] = playerAI;
+                            acceptableResponse = true;
+                        }
+                    }
+                Board.TTTBoard(placeHolders);
+
 
 
                 //Win outcomes for player one
@@ -268,7 +270,7 @@ namespace Game3T
                 }
 
                 //Win outcomes for the computer
-                if (placeHolders[0] == playerAI && placeHolders[1] == playerAI && placeHolders[2] == playerAI)
+                if (placeHolders[1] == playerAI && placeHolders[2] == playerAI && placeHolders[3] == playerAI)
                 {
                     win = true;
                     winner = "Computer";
@@ -308,10 +310,12 @@ namespace Game3T
                     win = true;
                     winner = "Computer";
                 }
-                }
+
+                ++turns;
             } while (win == false);
             Console.WriteLine("{0} wins!", winner);
         } 
             
     } 
-}
+            
+} 
