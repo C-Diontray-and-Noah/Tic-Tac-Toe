@@ -18,3 +18,5 @@ C:\Users\dw158600\Desktop\Tic-Tac-Toe\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.csproj
 C:\Users\dw158600\Desktop\Tic-Tac-Toe\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.csproj.CoreCompileInputs.cache
 C:\Users\dw158600\Desktop\Tic-Tac-Toe\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.exe
 C:\Users\dw158600\Desktop\Tic-Tac-Toe\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.pdb
+C:\Users\billy\OneDrive\Documents\GitHub\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.exe
+C:\Users\billy\OneDrive\Documents\GitHub\Tic-Tac-Toe\Game3T\obj\Debug\Game3T.pdb

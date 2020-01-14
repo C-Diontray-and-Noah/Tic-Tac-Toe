@@ -75,116 +75,130 @@ namespace Game3T
                         }
                         Console.WriteLine("Computer's turn : ");
                         System.Threading.Thread.Sleep(1000);
-                        if (placeHolders[1] == playerOne && turns == 1 )
+                        if (placeHolders[1] == playerOne)
                         {
-                            randomNumber = random.Next(1, 4);
-                            if (randomNumber == 1)
+                            randomNumber = random.Next(1, 3);
+                            if (randomNumber == 1 && placeHolders[3] != playerOne || placeHolders[3] != playerAI)
                             {
                                 placeHolders[3] = playerAI;
                             }
-                            else if (randomNumber == 2)
+                            else if (randomNumber == 2 && placeHolders[7] != playerOne || placeHolders[7] != playerAI)
                             {
                                 placeHolders[7] = playerAI;
                             }
-                            else
+                            else if (randomNumber == 2 && placeHolders[9] != playerOne || placeHolders[9] != playerAI)
                             {
                                 placeHolders[9] = playerAI;
                             }
                         }
                         else if (placeHolders[2] == playerOne)
                         {
-                            randomNumber = random.Next(1, 2);
-                            placeHolders[8] = playerAI;
-                        }
-
-                            Board.TTTBoard(placeHolders);
-                        }
-
-                        //Win outcomes for player one
-                        if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                        if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
-                        {
-                            win = true;
-                            winner = "Player 1";
-                        }
-                    if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerAI)
-                    {
-                        win = true;
-                        winner = "Computer";
+                            randomNumber = random.Next(1, 3);
+                            if (randomNumber == 1 && placeHolders[4] != playerOne || placeHolders[4] != playerAI)
+                            {
+                                placeHolders[4] = playerAI;
+                            }
+                            else if (randomNumber == 2 && placeHolders[6] != playerOne || placeHolders[6] != playerAI)
+                            {
+                                placeHolders[6] = playerAI;
+                            }
+                            else if (randomNumber == 2 && placeHolders[8] != playerOne || placeHolders[8] != playerAI)
+                            {
+                                placeHolders[8] = playerAI;
+                            }
                     }
-                    if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerAI)
-                    {
-                        win = true;
-                        winner = "Computer";
-                    }
-                    if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerAI)
-                    {
-                        win = true;
-                        winner = "Computer";
-                    }
-                    if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
-                    {
-                        win = true;
-                        winner = "Player 1";
-                    }
-                    if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
-                    {
-                        win = true;
-                        winner = "Player 1";
-                    }
-                    if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
-                    {
-                        win = true;
-                        winner = "Player 1";
-                    }
-                    if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
-                    {
-                        win = true;
-                        winner = "Player 1";
-                    }
-                    if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
-                    {
-                        win = true;
-                        winner = "Computer";
-                    }
-
                 }
-                } while (win == false);
+
+                Board.TTTBoard(placeHolders);
+
+
+                //Win outcomes for player one
+                if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+
+                //Win outcomes for the computer
+                if (placeHolders[0] == playerAI && placeHolders[1] == playerAI && placeHolders[2] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[3] == playerAI && placeHolders[4] == playerAI && placeHolders[5] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[6] == playerAI && placeHolders[7] == playerAI && placeHolders[8] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[0] == playerAI && placeHolders[3] == playerAI && placeHolders[6] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[1] == playerAI && placeHolders[4] == playerAI && placeHolders[7] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[2] == playerAI && placeHolders[5] == playerAI && placeHolders[8] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[2] == playerAI && placeHolders[4] == playerAI && placeHolders[6] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                if (placeHolders[0] == playerAI && placeHolders[4] == playerAI && placeHolders[8] == playerAI)
+                {
+                    win = true;
+                    winner = "Computer";
+                }
+                }
+            } while (win == false);
             Console.WriteLine("{0} wins!", winner);
-            } 
-        }
-    }
+        } 
+            
+    } 
+}

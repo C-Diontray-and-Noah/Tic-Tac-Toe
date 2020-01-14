@@ -20,7 +20,7 @@ namespace Game3T
 
             do
             {
-
+                //Asks player one whether they want to be Xs or Os and assigns values accordingly
                 while (xOrO == false)
                 {
                     Console.WriteLine("Player 1 : X or O?");
@@ -57,7 +57,7 @@ namespace Game3T
                             Console.WriteLine("Already taken. Choose another.");
                             userChoice = Convert.ToInt32(Console.ReadLine());
                         }
-                        //Evaluates whether the space chosen by
+                        //Evaluates whether the space chosen is
                         else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
                             placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
                             || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
@@ -107,82 +107,79 @@ namespace Game3T
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerOne)
+                 if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerOne)
+                if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
+                if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
+                if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
+                if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
+                if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                else if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
+                if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
 
-<<<<<<< HEAD
                 //Win outcomes for player two
-=======
->>>>>>> 616b5a0917902fb21d7b8189cb8dc5dd1f810822
-                if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerTwo)
+                if (placeHolders[0] == playerTwo && placeHolders[1] == playerTwo && placeHolders[2] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerTwo)
+                if (placeHolders[3] == playerTwo && placeHolders[4] == playerTwo && placeHolders[5] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerTwo)
+                if (placeHolders[6] == playerTwo && placeHolders[7] == playerTwo && placeHolders[8] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerTwo)
+                if (placeHolders[0] == playerTwo && placeHolders[3] == playerTwo && placeHolders[6] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerTwo)
+                if (placeHolders[1] == playerTwo && placeHolders[4] == playerTwo && placeHolders[7] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerTwo)
+                if (placeHolders[2] == playerTwo && placeHolders[5] == playerTwo && placeHolders[8] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerTwo)
+                if (placeHolders[2] == playerTwo && placeHolders[4] == playerTwo && placeHolders[6] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                else if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerTwo)
+                if (placeHolders[0] == playerTwo && placeHolders[4] == playerTwo && placeHolders[8] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
@@ -192,19 +189,15 @@ namespace Game3T
             //Resets all values on the board to the original ones
             Console.WriteLine("{0} wins!", winner);
 
-<<<<<<< HEAD
             for (int i = 0; i < placeHolders.Length; ++i)
             {
                 placeHolders[i] = Convert.ToString(i);
             }
-=======
 
             for (int i = 0; i < placeHolders.Length; i++)
             {
                 placeHolders[i] = Convert.ToString(i); 
             }
-         
->>>>>>> 616b5a0917902fb21d7b8189cb8dc5dd1f810822
         }
     }
 }
