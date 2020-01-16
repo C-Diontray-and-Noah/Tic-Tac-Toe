@@ -8,6 +8,10 @@
 
 Our goal was to avoid the wrath of Brosius, as well as making a game that works and has somewhat complex elements.
 
+# Description
+
+It's tic tac toe.
+
 # Instructions
 
 * Step 1 :  The computer asks you if you want to play tic tac toe.
