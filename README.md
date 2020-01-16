@@ -1,5 +1,5 @@
+#Tic Tac Toe
 <hr>
-# Tic-Tac-Toe
 
 # Instructions
 
