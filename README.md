@@ -3,11 +3,11 @@
 <h3> how to play tic tac toe </h3>
 <hr>
 
-* first step, The computer would ask you if you wanna play tic tac toe
+* Step 1 :  The computer asks you if you want to play tic tac toe.
 
-* second step, the computer would ask you wanna play singleplayer or multiplayerthen you'll choose one
+* Step 2 : The computer asks if you want to play singleplayer or multiplayer.
 
-* third step, if you play singleplayer you be playing with an AI but you play multiplayer you'll play with one of your friend and a good battle between you guy
+* Step 3 : If you play singleplayer you are paired against a simple AI but if you play multiplayer you play a local multiplayer where turns switch between players and X or O is assigned accordingly. In both singleplayer and multiplayer, player one is asked whether they would like to be X or O.
 
-* last step, after you play the game the computer would ask you if you wanna play again if you choice yes you'll be ask if you wanna play singleplayer of multiplayer but if you choose no the you are done.
+* Step 4 : after you  play the game the game asks you if you want to play again, the game asking if you want to play singleplayer or multiplayer again.
 
