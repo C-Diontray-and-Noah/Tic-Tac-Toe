@@ -1,6 +1,9 @@
 <hr>
+
 # Tic Tac Toe
+
 </hr>
+
 # Goal
 
 Our goal
