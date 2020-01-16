@@ -22,7 +22,6 @@ namespace Game3T
             Random random = new Random();
             do
             {
-
                 while (xOrO == false)
                 {
                     Console.WriteLine("Player 1 : X or O?");
@@ -78,537 +77,650 @@ namespace Game3T
                 //Win outcomes for player one
                 if (placeHolders[1] == playerOne && placeHolders[2] == playerOne && placeHolders[3] == playerOne)
                 {
-                    win = true;
                     winner = "Player 1";
-                }
-                if (placeHolders[4] == playerOne && placeHolders[5] == playerOne && placeHolders[6] == playerOne)
-                {
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[7] == playerOne && placeHolders[8] == playerOne && placeHolders[9] == playerOne)
+                else if (placeHolders[4] == playerOne && placeHolders[5] == playerOne && placeHolders[6] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
+                else if (placeHolders[7] == playerOne && placeHolders[8] == playerOne && placeHolders[9] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
+                else if (placeHolders[1] == playerOne && placeHolders[4] == playerOne && placeHolders[7] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[3] == playerOne && placeHolders[6] == playerOne && placeHolders[9] == playerOne)
+                else if (placeHolders[2] == playerOne && placeHolders[5] == playerOne && placeHolders[8] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[1] == playerOne && placeHolders[5] == playerOne && placeHolders[9] == playerOne)
+                else if (placeHolders[3] == playerOne && placeHolders[6] == playerOne && placeHolders[9] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                if (placeHolders[3] == playerOne && placeHolders[5] == playerOne && placeHolders[7] == playerOne)
+                else if (placeHolders[1] == playerOne && placeHolders[5] == playerOne && placeHolders[9] == playerOne)
                 {
+                    winner = "Player 1";
                     win = true;
-                    winner = "Player 1";
                 }
-                Board.TTTBoard(placeHolders);
-                //Runs computer's choice by 
-                Console.WriteLine("Computer's turn : ");
-                System.Threading.Thread.Sleep(1000);
-                acceptableResponse = false;
-                if (userChoice == 1)
+                else if (placeHolders[3] == playerOne && placeHolders[5] == playerOne && placeHolders[7] == playerOne)
                 {
-                    while (acceptableResponse == false)
+                    winner = "Player 1";
+                    win = true;
+                }
+                else
+                {
+                    Board.TTTBoard(placeHolders);
+                    //Runs computer's turn text and waits briefly
+                    Console.WriteLine("Computer's turn : ");
+                    System.Threading.Thread.Sleep(1000);
+                    acceptableResponse = false;
+                    //Runs the computer's choice based on logical moves to make and empty spaces. Does this for every possible user choice
+
+                    //Responses to the choice of 1
+                    if (userChoice == 1)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[2] == playerOne || placeHolders[3] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[2] == playerOne && placeHolders[3] != playerAI && placeHolders[3] != playerOne || placeHolders[3] == playerOne && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
                             {
-                                placeHolders[2] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else if (randomNumber == 2 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                        {
-                            placeHolders[3] = playerAI;
-                            acceptableResponse = true;
-                        }
-                        else if (placeHolders[4] == playerOne || placeHolders[7] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
-                            {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                    }
-                }
-                else if (userChoice == 2)
-                {
-                    while (acceptableResponse == false)
-                    {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[1] == playerOne || placeHolders[3] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                             else if (randomNumber == 2 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
                             {
                                 placeHolders[3] = playerAI;
                                 acceptableResponse = true;
                             }
-                        }
-                        else if (placeHolders[5] == playerOne || placeHolders[8] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                            else if (placeHolders[4] == playerOne && placeHolders[7] != playerAI && placeHolders[7] != playerOne || placeHolders[7] == playerOne && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
                             {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                            else
                             {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
+
                             }
                         }
                     }
-                }
-                else if (userChoice == 3)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 2
+                    else if (userChoice == 2)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[1] == playerOne || placeHolders[2] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[1] == playerOne && placeHolders[3] != playerAI && placeHolders[3] != playerOne || placeHolders[3] == playerOne && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
                             {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                            else if (placeHolders[5] == playerOne && placeHolders[8] != playerAI && placeHolders[8] != playerOne || placeHolders[8] == playerOne && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
                             {
-                                placeHolders[2] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[6] == playerOne || placeHolders[9] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                            else
                             {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (userChoice == 4)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 3
+                    else if (userChoice == 3)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[5] == playerOne || placeHolders[6] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[1] == playerOne && placeHolders[2] != playerAI && placeHolders[2] != playerOne || placeHolders[2] == playerOne && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
                             {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                            else if (placeHolders[6] == playerOne && placeHolders[9] != playerAI && placeHolders[9] != playerOne || placeHolders[9] == playerOne && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
                             {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[1] == playerOne || placeHolders[7] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                            else
                             {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (userChoice == 5)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 4
+                    else if (userChoice == 4)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[3] == playerOne || placeHolders[4] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[5] == playerOne && placeHolders[6] != playerAI && placeHolders[6] != playerOne || placeHolders[6] == playerOne && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
                             {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                            else if (placeHolders[1] == playerOne && placeHolders[7] != playerAI && placeHolders[7] != playerOne || placeHolders[7] == playerOne && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
                             {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[2] == playerOne || placeHolders[8] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                            else
                             {
-                                placeHolders[2] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
-                            {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (userChoice == 6)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 5
+                    else if (userChoice == 5)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[4] == playerOne || placeHolders[5] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
-                            {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[3] == playerOne && placeHolders[4] != playerAI && placeHolders[4] != playerOne || placeHolders[4] == playerOne && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                if (randomNumber == 1 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
-                            {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
+                            else if (placeHolders[2] == playerOne && placeHolders[8] != playerAI && placeHolders[8] != playerOne || placeHolders[8] == playerOne && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                    {
+                                if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[3] == playerOne || placeHolders[9] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                            else
                             {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (userChoice == 7)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 6
+                    else if (userChoice == 6)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[1] == playerOne || placeHolders[4] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[4] == playerOne && placeHolders[5] != playerAI && placeHolders[5] != playerOne || placeHolders[5] == playerOne && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                            else if (placeHolders[3] == playerOne && placeHolders[9] != playerAI && placeHolders[9] != playerOne || placeHolders[9] == playerOne && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
                             {
-                                placeHolders[4] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[8] == playerOne || placeHolders[9] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                            else
                             {
-                                placeHolders[8] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[3] != playerOne || placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (userChoice == 8)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 7
+                    else if (userChoice == 7)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[7] == playerOne || placeHolders[9] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[1] == playerOne && placeHolders[4] != playerAI && placeHolders[4] != playerOne || placeHolders[4] == playerOne && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
                             {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                            else if (placeHolders[8] == playerOne && placeHolders[9] != playerAI && placeHolders[9] != playerOne || placeHolders[9] == playerOne && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
                             {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[2] == playerOne || placeHolders[5] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                            else
                             {
-                                placeHolders[2] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
-                            {
-                                placeHolders[5] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                            {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                            {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                            {
-                                placeHolders[9] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[3] != playerOne || placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
-                else if (placeHolders[9] == playerOne)
-                {
-                    while (acceptableResponse == false)
+                    //Responses to the choice of 8
+                    else if (userChoice == 8)
                     {
-                        randomNumber = random.Next(1, 3);
-                        if (placeHolders[6] == playerOne || placeHolders[7] == playerOne)
+                        while (acceptableResponse == false)
                         {
-                            if (randomNumber == 1 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[7] == playerOne && placeHolders[9] != playerAI && placeHolders[9] != playerOne || placeHolders[9] == playerOne && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
                             {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[9] != playerOne && placeHolders[9] != playerAI)
+                                {
+                                    placeHolders[9] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                            else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                            else if (placeHolders[2] == playerOne && placeHolders[5] != playerAI && placeHolders[5] != playerOne || placeHolders[5] == playerOne && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
                             {
-                                placeHolders[7] = playerAI;
-                                acceptableResponse = true;
+                                if (randomNumber == 1 && placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
-                        }
-                        else if (placeHolders[3] == playerOne || placeHolders[6] == playerOne)
-                        {
-                            if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                            else
                             {
-                                placeHolders[3] = playerAI;
-                                acceptableResponse = true;
-                            }
-                            else if (randomNumber == 2 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
-                            {
-                                placeHolders[6] = playerAI;
-                                acceptableResponse = true;
-                            }
-                        }
-                        else
-                        {
-                            if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
-                            {
-                                placeHolders[1] = playerAI;
-                                acceptableResponse = true;
+                                //last ditch responses
+                                if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
                             }
                         }
                     }
-                }
+                    //Responses to the choice of 9
+                    else if (userChoice == 9)
+                    {
+                        while (acceptableResponse == false)
+                        {
+                            randomNumber = random.Next(1, 3);
+                            if (placeHolders[6] == playerOne && placeHolders[7] != playerAI && placeHolders[7] != playerOne || placeHolders[7] == playerOne && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                            {
+                                if (randomNumber == 1 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                                {
+                                    placeHolders[7] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                            }
+                            else if (placeHolders[3] == playerOne && placeHolders[6] != playerAI && placeHolders[6] != playerOne || placeHolders[6] == playerOne && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                            {
+                                if (randomNumber == 1 && placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[3] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (randomNumber == 2 && placeHolders[6] != playerOne && placeHolders[6] != playerAI)
+                                {
+                                    placeHolders[6] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                            }
+                            else
+                            {
+                                //last ditch responses
+                                if (placeHolders[1] != playerOne && placeHolders[1] != playerAI)
+                                {
+                                    placeHolders[1] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[2] != playerOne && placeHolders[2] != playerAI)
+                                {
+                                    placeHolders[2] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                                {
+                                    placeHolders[4] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[5] != playerOne && placeHolders[5] != playerAI)
+                                {
+                                    placeHolders[5] = playerAI;
+                                    acceptableResponse = true;
+                                }
+                                else if (placeHolders[8] != playerOne && placeHolders[8] != playerAI)
+                                {
+                                    placeHolders[8] = playerAI;
+                                    acceptableResponse = true;
+                                }
+
+                            }
+                        }
+                    }
 
 
 
 
 
-
-                //Win outcomes for the computer
-                if (placeHolders[1] == playerAI && placeHolders[2] == playerAI && placeHolders[3] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[3] == playerAI && placeHolders[4] == playerAI && placeHolders[5] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[6] == playerAI && placeHolders[7] == playerAI && placeHolders[8] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[0] == playerAI && placeHolders[3] == playerAI && placeHolders[6] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[1] == playerAI && placeHolders[4] == playerAI && placeHolders[7] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[2] == playerAI && placeHolders[5] == playerAI && placeHolders[8] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[2] == playerAI && placeHolders[4] == playerAI && placeHolders[6] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
-                }
-                if (placeHolders[0] == playerAI && placeHolders[4] == playerAI && placeHolders[8] == playerAI)
-                {
-                    win = true;
-                    winner = "Computer";
+                    //Win outcomes for the computer
+                    if (placeHolders[1] == playerAI && placeHolders[2] == playerAI && placeHolders[3] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[3] == playerAI && placeHolders[4] == playerAI && placeHolders[5] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[6] == playerAI && placeHolders[7] == playerAI && placeHolders[8] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[0] == playerAI && placeHolders[3] == playerAI && placeHolders[6] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[1] == playerAI && placeHolders[4] == playerAI && placeHolders[7] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[2] == playerAI && placeHolders[5] == playerAI && placeHolders[8] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[2] == playerAI && placeHolders[4] == playerAI && placeHolders[6] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else if (placeHolders[0] == playerAI && placeHolders[4] == playerAI && placeHolders[8] == playerAI)
+                    {
+                        winner = "Computer";
+                        win = true;
+                    }
+                    else
+                    {
+                        ++turns;
+                    }
                 }
                 Board.TTTBoard(placeHolders);
                 if (turns == 9)
                 {
                     win = true;
                 }
-                ++turns;
-             } while (win == false) ;
+            } while (win == false);
             if (winner != null)
             {
                 Console.WriteLine("{0} wins!", winner);
+                xOrO = true;
             }
             else
             {
                 Console.WriteLine("No winner. Try harder next time.");
             }
-            }
+        }
 
-            } 
+    } 
             
 } 

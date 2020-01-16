@@ -17,54 +17,80 @@ namespace Game3T
             //Asks the player if they would like to play Tic Tac Toe
             Console.WriteLine("Welcome to Tic Tac Toe! Would you like to play Tic Tac Toe?");
             userInput = Console.ReadLine();
-
-            while (userInput.ToLower() != "yes" || userInput.ToLower() != "no")
+            while (userInput.ToLower() == "yes" || userInput.ToLower() != "no")
             {
                 if (userInput.ToLower() == "yes")
                 {
                     while (quit == false)
                     {
 
+                        //Asks for singleplayer or multiplayer, responds accordingly
+                        Console.WriteLine("Would you like to play singleplayer or multiplayer?");
+                        userInput = Console.ReadLine();
+                        while (userInput.ToLower() != "singleplayer" && userInput != "multiplayer" && userInput != "end")
                         {
-                            Console.WriteLine("Would you like to play singleplayer or multiplayer?");
-                            userInput = Console.ReadLine();
-                            while (userInput != "singleplayer" || userInput != "multiplayer")
+                            //Responds to an answer other than singleplayer or multiplayer and then tries again for an input
+                            if (userInput != "singleplayer" && userInput != "multiplayer" && userInput != "end")
                             {
-                                if (userInput.ToLower() == "singleplayer")
-                                {
-                                    AI.TTTAI(placeHolders);
-                                }
-                                else if (userInput.ToLower() == "multiplayer")
-                                {
-                                    Multiplayer.TTTMultiplayer(placeHolders);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Not an option. Enter singleplayer or multiplayer.");
-                                    userInput = Console.ReadLine();
-                                }
-                            }
-
-                                Console.WriteLine("Would you like to play again?");
+                                Console.WriteLine("Not an option. Enter singleplayer or multiplayer.");
                                 userInput = Console.ReadLine();
-                                if (userInput.ToLower() == "no")
-                                {
-                                    quit = true;
-                                }
+                            }
+                        }
+                        //Runs game against AI
+                        if (userInput.ToLower() == "singleplayer")
+                        {
+                            AI.TTTAI(placeHolders);
+                            userInput = "end";
+                        }
+                        //Runs game against another player
+                        else if (userInput.ToLower() == "multiplayer")
+                        {
+                            Multiplayer.TTTMultiplayer(placeHolders);
+                            userInput = "end";
+
+
+                        }
+                        //Resets the board
+                        for (int i = 0; i < placeHolders.Length; ++i)
+                        {
+                            placeHolders[i] = Convert.ToString(i);
+                        }
+                        //Asks if the user would like to play again
+                        Console.WriteLine("Would you like to play again?");
+                        userInput = Console.ReadLine();
+                        if (userInput.ToLower() == "no")
+                        {
+                            userInput = "no";
+                            quit = true;
+                        }
+                        else if (userInput.ToLower() == "yes")
+                        {
+                            Main(args);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not an answer. Try again.");
+                            userInput = Console.ReadLine();
                         }
                     }
                 }
+                //Responds to no by saying goodbye, code stops after this
                 else if (userInput.ToLower() == "no")
                 {
-                    Console.WriteLine("Goodbye!");
+                   
                 }
+                //Responds to any answer other than yes or no followed by the game asking again
                 else
                 {
                     Console.WriteLine("That is not yes or no. Try entering yes or no.");
                     userInput = Console.ReadLine();
                 }
+                userInput = "no";
             }
+            //Occurrence of all while statements ceasing
+            Console.WriteLine("Goodbye!");
         }
+        
     }
 }
 

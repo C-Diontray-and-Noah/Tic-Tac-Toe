@@ -77,18 +77,10 @@ namespace Game3T
                 else
                 {
                     Console.WriteLine("Player 2's turn : ");
-                    
+
                     while (turns % 2 != 0)
                     {
                         userChoice = Convert.ToInt32(Console.ReadLine());
-                        /*try
-                        {
-                            userChoice = Convert.ToInt32(Console.ReadLine());
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("That's not a number");
-                        }*/
                         if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
                         {
                             Console.WriteLine("Already taken. Choose another.");
@@ -102,8 +94,8 @@ namespace Game3T
                         }
                         else
                         {
-                            
-                                placeHolders[userChoice] = playerTwo;
+
+                            placeHolders[userChoice] = playerTwo;
                             ++turns;
                         }
                     }
@@ -116,7 +108,7 @@ namespace Game3T
                     win = true;
                     winner = "Player 1";
                 }
-                 if (placeHolders[4] == playerOne && placeHolders[5] == playerOne && placeHolders[6] == playerOne)
+                if (placeHolders[4] == playerOne && placeHolders[5] == playerOne && placeHolders[6] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
@@ -200,7 +192,6 @@ namespace Game3T
                     win = true;
                 }
             } while (win == false);
-            //Resets all values on the board to the original ones
             if (winner != null)
             {
                 Console.WriteLine("{0} wins!", winner);
@@ -208,16 +199,6 @@ namespace Game3T
             else
             {
                 Console.WriteLine("No winner. Try harder next time.");
-            }
-
-            for (int i = 0; i < placeHolders.Length; ++i)
-            {
-                placeHolders[i] = Convert.ToString(i);
-            }
-
-            for (int i = 0; i < placeHolders.Length; i++)
-            {
-                placeHolders[i] = Convert.ToString(i); 
             }
         }
     }
