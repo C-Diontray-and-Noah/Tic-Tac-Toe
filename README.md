@@ -1,6 +1,4 @@
 # Tic-Tac-Toe
-<hr>
-<hr>
 
 # Instructions
 
