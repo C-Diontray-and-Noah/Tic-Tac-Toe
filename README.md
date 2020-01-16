@@ -3,6 +3,8 @@
 <h3> how to play tic tac toe </h3>
 <hr>
 
+# Instructions
+
 * Step 1 :  The computer asks you if you want to play tic tac toe.
 
 * Step 2 : The computer asks if you want to play singleplayer or multiplayer.
@@ -11,4 +13,4 @@
 
 * Step 4 : after you  play the game the game asks you if you want to play again, the game asking if you want to play singleplayer or multiplayer again.
 
-<img src="CSharp Flowchart.png" height = "1000" width ="400">
+<img src="CSharp Flowchart.png" height = "1200" width ="400">
