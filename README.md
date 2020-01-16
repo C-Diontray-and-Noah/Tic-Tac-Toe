@@ -1,5 +1,6 @@
+<hr>
 # Tic-Tac-Toe
-
+</hr>
 # Instructions
 
 * Step 1 :  The computer asks you if you want to play tic tac toe.
