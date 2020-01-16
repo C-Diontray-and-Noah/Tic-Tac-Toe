@@ -133,41 +133,41 @@ namespace Game3T
                                 placeHolders[2] = playerAI;
                                 acceptableResponse = true;
                             }
-                            else if (randomNumber == 2 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                        }
+                        else if (randomNumber == 2 && placeHolders[3] != playerOne && placeHolders[3] != playerAI)
+                        {
+                            placeHolders[3] = playerAI;
+                            acceptableResponse = true;
+                        }
+                        else if (placeHolders[4] == playerOne || placeHolders[7] == playerOne)
+                        {
+                            if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
+                            {
+                                placeHolders[4] = playerAI;
+                                acceptableResponse = true;
+                            }
+                            else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
+                            {
+                                placeHolders[7] = playerAI;
+                                acceptableResponse = true;
+                            }
+                        }
+                        else
+                        {
+                            if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
                             {
                                 placeHolders[3] = playerAI;
                                 acceptableResponse = true;
                             }
-                            else if (placeHolders[4] == playerOne || placeHolders[7] == playerOne)
+                            else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
                             {
-                                if (randomNumber == 1 && placeHolders[4] != playerOne && placeHolders[4] != playerAI)
-                                {
-                                    placeHolders[4] = playerAI;
-                                    acceptableResponse = true;
-                                }
-                                else if (randomNumber == 2 && placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                                {
-                                    placeHolders[7] = playerAI;
-                                    acceptableResponse = true;
-                                }
+                                placeHolders[7] = playerAI;
+                                acceptableResponse = true;
                             }
-                            else
+                            else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
                             {
-                                if (placeHolders[3] != playerOne && placeHolders[3] != playerAI)
-                                {
-                                    placeHolders[3] = playerAI;
-                                    acceptableResponse = true;
-                                }
-                                else if (placeHolders[7] != playerOne && placeHolders[7] != playerAI)
-                                {
-                                    placeHolders[7] = playerAI;
-                                    acceptableResponse = true;
-                                }
-                                else if (placeHolders[9] != playerOne && placeHolders[9] != playerAI)
-                                {
-                                    placeHolders[9] = playerAI;
-                                    acceptableResponse = true;
-                                }
+                                placeHolders[9] = playerAI;
+                                acceptableResponse = true;
                             }
                         }
                     }

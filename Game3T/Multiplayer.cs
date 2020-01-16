@@ -57,7 +57,7 @@ namespace Game3T
                             Console.WriteLine("Already taken. Choose another.");
                             userChoice = Convert.ToInt32(Console.ReadLine());
                         }
-                        //Evaluates whether the space chosen is
+                        //Evaluates whether the space chosen is an actual space
                         else if (placeHolders[userChoice] == "1" || placeHolders[userChoice] == "2" || placeHolders[userChoice] == "3" ||
                             placeHolders[userChoice] == "4" || placeHolders[userChoice] == "5" || placeHolders[userChoice] == "6" || placeHolders[userChoice] == "7"
                             || placeHolders[userChoice] == "8" || placeHolders[userChoice] == "9")
@@ -81,6 +81,14 @@ namespace Game3T
                     while (turns % 2 != 0)
                     {
                         userChoice = Convert.ToInt32(Console.ReadLine());
+                        /*try
+                        {
+                            userChoice = Convert.ToInt32(Console.ReadLine());
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("That's not a number");
+                        }*/
                         if (placeHolders[userChoice] == "X" || placeHolders[userChoice] == "O")
                         {
                             Console.WriteLine("Already taken. Choose another.");
@@ -94,7 +102,8 @@ namespace Game3T
                         }
                         else
                         {
-                            placeHolders[userChoice] = playerTwo;
+                            
+                                placeHolders[userChoice] = playerTwo;
                             ++turns;
                         }
                     }
@@ -102,22 +111,17 @@ namespace Game3T
                 }
 
                 //Win outcomes for player one
-                if (placeHolders[0] == playerOne && placeHolders[1] == playerOne && placeHolders[2] == playerOne)
+                if (placeHolders[1] == playerOne && placeHolders[2] == playerOne && placeHolders[3] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                 if (placeHolders[3] == playerOne && placeHolders[4] == playerOne && placeHolders[5] == playerOne)
+                 if (placeHolders[4] == playerOne && placeHolders[5] == playerOne && placeHolders[6] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                if (placeHolders[6] == playerOne && placeHolders[7] == playerOne && placeHolders[8] == playerOne)
-                {
-                    win = true;
-                    winner = "Player 1";
-                }
-                if (placeHolders[0] == playerOne && placeHolders[3] == playerOne && placeHolders[6] == playerOne)
+                if (placeHolders[7] == playerOne && placeHolders[8] == playerOne && placeHolders[9] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
@@ -132,34 +136,34 @@ namespace Game3T
                     win = true;
                     winner = "Player 1";
                 }
-                if (placeHolders[2] == playerOne && placeHolders[4] == playerOne && placeHolders[6] == playerOne)
+                if (placeHolders[4] == playerOne && placeHolders[6] == playerOne && placeHolders[9] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
-                if (placeHolders[0] == playerOne && placeHolders[4] == playerOne && placeHolders[8] == playerOne)
+                if (placeHolders[1] == playerOne && placeHolders[5] == playerOne && placeHolders[9] == playerOne)
+                {
+                    win = true;
+                    winner = "Player 1";
+                }
+                if (placeHolders[3] == playerOne && placeHolders[5] == playerOne && placeHolders[7] == playerOne)
                 {
                     win = true;
                     winner = "Player 1";
                 }
 
                 //Win outcomes for player two
-                if (placeHolders[0] == playerTwo && placeHolders[1] == playerTwo && placeHolders[2] == playerTwo)
+                if (placeHolders[1] == playerOne && placeHolders[2] == playerOne && placeHolders[3] == playerOne)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                if (placeHolders[3] == playerTwo && placeHolders[4] == playerTwo && placeHolders[5] == playerTwo)
+                if (placeHolders[4] == playerTwo && placeHolders[5] == playerTwo && placeHolders[6] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                if (placeHolders[6] == playerTwo && placeHolders[7] == playerTwo && placeHolders[8] == playerTwo)
-                {
-                    win = true;
-                    winner = "Player 2";
-                }
-                if (placeHolders[0] == playerTwo && placeHolders[3] == playerTwo && placeHolders[6] == playerTwo)
+                if (placeHolders[7] == playerTwo && placeHolders[8] == playerTwo && placeHolders[9] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
@@ -174,20 +178,37 @@ namespace Game3T
                     win = true;
                     winner = "Player 2";
                 }
-                if (placeHolders[2] == playerTwo && placeHolders[4] == playerTwo && placeHolders[6] == playerTwo)
+                if (placeHolders[3] == playerTwo && placeHolders[6] == playerTwo && placeHolders[9] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
-                if (placeHolders[0] == playerTwo && placeHolders[4] == playerTwo && placeHolders[8] == playerTwo)
+                if (placeHolders[1] == playerTwo && placeHolders[5] == playerTwo && placeHolders[9] == playerTwo)
+                {
+                    win = true;
+                    winner = "Player 2";
+                }
+                if (placeHolders[3] == playerTwo && placeHolders[5] == playerTwo && placeHolders[7] == playerTwo)
                 {
                     win = true;
                     winner = "Player 2";
                 }
 
+                //Tie game result
+                if (turns == 9)
+                {
+                    win = true;
+                }
             } while (win == false);
             //Resets all values on the board to the original ones
-            Console.WriteLine("{0} wins!", winner);
+            if (winner != null)
+            {
+                Console.WriteLine("{0} wins!", winner);
+            }
+            else
+            {
+                Console.WriteLine("No winner. Try harder next time.");
+            }
 
             for (int i = 0; i < placeHolders.Length; ++i)
             {
