@@ -1,6 +1,9 @@
 # Tic Tac Toe
 <hr>
 
+# Goal
+
+Our goal in making this game was to appease Mr. Brosius.
 # Instructions
 
 * Step 1 :  The computer asks you if you want to play tic tac toe.
@@ -12,6 +15,6 @@
 * Step 4 : after you  play the game the game asks you if you want to play again, the game asking if you want to play singleplayer or multiplayer again.
 
 # Youtube Link
-<a href = "https://www.youtube.com/watch?v=D-vfkNRIsK8">TODO</a>
+<a href = "https://www.youtube.com/watch?v=VBlFHuCzPgY">TODO</a>
 # Flowchart
 <img src="CSharp Flowchart.png" height = "969" width ="318">
