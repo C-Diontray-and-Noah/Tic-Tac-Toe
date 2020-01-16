@@ -11,4 +11,4 @@
 
 * Step 4 : after you  play the game the game asks you if you want to play again, the game asking if you want to play singleplayer or multiplayer again.
 
-<img src="CSharp Flowchart.png" height = "800" width ="400">
+<img src="CSharp Flowchart.png" height = "1000" width ="400">
