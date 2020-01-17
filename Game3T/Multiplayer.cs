@@ -20,7 +20,7 @@ namespace Game3T
 
             do
             {
-                //Asks player one whether they want to be Xs or Os and assigns values accordingly
+                //Takes the input of whether player one would like to play with Xs or Os, assigns player two accordingly
                 while (xOrO == false)
                 {
                     Console.WriteLine("Player 1 : X or O?");
@@ -186,16 +186,18 @@ namespace Game3T
                     winner = "Player 2";
                 }
 
-                //Tie game result
+                //Tie game outcome
                 if (turns == 9)
                 {
                     win = true;
                 }
             } while (win == false);
+            //Win game result
             if (winner != null)
             {
                 Console.WriteLine("{0} wins!", winner);
             }
+            //Tie game result
             else
             {
                 Console.WriteLine("No winner. Try harder next time.");

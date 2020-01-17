@@ -20,8 +20,14 @@ namespace Game3T
             int turns = 0;
             int randomNumber = 0;
             Random random = new Random();
-            do
+
+            do {
+             //Tie game outcome
+            if (turns == 9)
             {
+                win = true;
+            }
+                //Takes the input of whether player one would like to play with Xs or Os, assigns the computer accordingly
                 while (xOrO == false)
                 {
                     Console.WriteLine("Player 1 : X or O?");
@@ -705,16 +711,14 @@ namespace Game3T
                     }
                 }
                 Board.TTTBoard(placeHolders);
-                if (turns == 9)
-                {
-                    win = true;
-                }
             } while (win == false);
+            //Win game result
             if (winner != null)
             {
                 Console.WriteLine("{0} wins!", winner);
                 xOrO = true;
             }
+            //Tie game result
             else
             {
                 Console.WriteLine("No winner. Try harder next time.");
